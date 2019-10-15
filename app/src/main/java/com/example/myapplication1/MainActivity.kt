@@ -9,22 +9,16 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-  var count = 0;
-  private lateinit var profileButton: Button
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main)
-    profileButton = findViewById(R.id.profileButton)
-    val boton:Button = findViewById(R.id.myButton)
-    boton.setOnClickListener {
-      Toast.makeText(MainActivity@this, "${count++}", Toast.LENGTH_SHORT).show()
-      val text: TextView = findViewById(R.id.texto)
 
-      text.text = count.toString()
-      boton.text = "Click again!"
+    val button:Button = findViewById(R.id.myButton)
+    button.setOnClickListener {
+        val intent = Intent(this, SecondActivity::class.java).apply {
+
     }
-    profileButton.setOnClickListener{
-      val intent = Intent(this, ProfileActivity::class.java)
-    }
+        startActivity(intent)
   }
+ }
 }

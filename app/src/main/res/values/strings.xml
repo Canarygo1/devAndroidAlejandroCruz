@@ -2,4 +2,7 @@
   <string name="app_name">My Application1</string>
   <string name="textButton">Click!</string>
   <string name="text">hello</string>
+  <string name="city">city</string>
+  <string name="birthdate">birthdate</string>
+    <string name="title_activity_second">SecondActivity</string>
 </resources>
