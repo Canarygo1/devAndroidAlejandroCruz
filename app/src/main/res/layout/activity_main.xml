@@ -16,13 +16,12 @@
           android:layout_width="50dp"
           android:gravity="center"
           android:textColor="#ffffff"
-          android:text="hola"
-/>
+          android:text="@string/text"/>
 
   <Button
           android:id="@+id/myButton"
           android:layout_width="75dp"
           android:layout_height="32dp"
-          android:text="Click!"
+          android:text="@string/textButton"
           android:textSize="8sp" />
 </LinearLayout>

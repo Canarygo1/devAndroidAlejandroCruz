@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">My Application1</string>
+  <string name="textButton">Click!</string>
+  <string name="text">hello</string>
 </resources>
