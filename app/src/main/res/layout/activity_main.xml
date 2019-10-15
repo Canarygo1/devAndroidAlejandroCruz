@@ -1,76 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp"
-        tools:context=".ProfileActivity">
+        android:background="@drawable/foto"
+        >
 
-  <ImageView
-          android:id="@+id/image"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          tools:srcCompat="@tools:sample/avatars[2]" />
-
-  <TextView
-          android:id="@+id/name"
-          style="@style/ProfileName"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="16dp"
+  <TextView android:id="@+id/texto"
+          android:layout_height="20dp"
+          android:layout_width="50dp"
           android:gravity="center"
-          android:text="Marcos Pérez" />
+          android:textColor="#ffffff"
+          android:text="hola"
+          />
 
-  <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="16dp"
-          android:orientation="horizontal">
-
-    <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-      <TextView
-              android:id="@+id/textView3"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="@string/birthdate"
-              style="@style/infoTest" />
-
-      <TextView
-              android:id="@+id/textView4"
-              style="@style/infoTest"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="@string/city" />
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-      <TextView
-              android:id="@+id/birthdate"
-              style="@style/AnswerText"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:textColorHint="#3C3F41"
-              tools:text="02/01/1997" />
-
-      <TextView
-              android:id="@+id/city"
-              style="@style/AnswerText"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              tools:text="Alcalá de Henares" />
-    </LinearLayout>
-
-  </LinearLayout>
+  <Button
+          android:id="@+id/myButton"
+          android:layout_width="75dp"
+          android:layout_height="32dp"
+          android:text="Click!"
+          android:textSize="8sp" />
 </LinearLayout>
