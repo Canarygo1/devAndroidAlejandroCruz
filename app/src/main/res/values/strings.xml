@@ -5,4 +5,6 @@
     <string name="city">city</string>
     <string name="birthdate">birthdate</string>
     <string name="title_activity_second">SecondActivity</string>
+    <string name="fecha_de_lanzamiento">Realese date</string>
+    <string name="original_Title">Titulo original</string>
 </resources>

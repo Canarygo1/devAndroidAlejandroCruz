@@ -5,4 +5,6 @@
     <string name="text">hola</string>
     <string name="city">ciudad</string>
     <string name="birthdate">cumpleaños</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="fecha_de_lanzamiento">Fecha de Lanzamiento</string>
 </resources>
