@@ -12,10 +12,8 @@ class ActivityMovieList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_list)
-            setContentView(R.layout.activity_movie_list)
-            my_recycler_view.layoutManager = LinearLayoutManager(this)
-            my_recycler_view.adapter = MyAdapter()
-        }
+        setContentView(R.layout.activity_movie_list)
+        my_recycler_view.layoutManager = LinearLayoutManager(this)
+        my_recycler_view.adapter = MyAdapter()
     }
-
-
+}

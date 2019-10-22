@@ -7,16 +7,16 @@ import android.widget.TextView
 import com.example.myapplication1.R
 
 class SecondActivity : AppCompatActivity() {
-    lateinit var nameText:TextView
-    lateinit var descriptionText : TextView
-    lateinit var cityText : TextView
-    lateinit var birthdayText : TextView
+    lateinit var nameText: TextView
+    lateinit var descriptionText: TextView
+    lateinit var cityText: TextView
+    lateinit var birthdayText: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val name:String = intent.getStringExtra("name")
-        val description:String = intent.getStringExtra("description")
-        val city:String = intent.getStringExtra("city")
-        val birthday:String = intent.getStringExtra("birthday")
+        val name: String = intent.getStringExtra("name")
+        val description: String = intent.getStringExtra("description")
+        val city: String = intent.getStringExtra("city")
+        val birthday: String = intent.getStringExtra("birthday")
 
         setContentView(R.layout.activity_second)
         nameText = findViewById(R.id.name)

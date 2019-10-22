@@ -1,4 +1,5 @@
 package com.example.myapplication1.ui
+
 //themoviedb.org api
 //Crear modelos objectos del Json
 //
@@ -13,19 +14,21 @@ import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_movie.*
+
 class MovieActivity : AppCompatActivity() {
     val movie = Movie(
         id = 1,
         tittle = "Macarena",
         year = "1996",
         genre = "Thriller",
-        description ="asdadasddasdsdasdzsadasdsdsfsdasffsfasfsdfggdgffddffsdfsdfsfsdfsfsfsf",
+        description = "asdadasddasdsdasdzsadasdsdsfsdasffsfasfsdfggdgffddffsdfsdfsfsdfsfsfsf",
         rating = 9.8
     )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
-        with(movie){
+        with(movie) {
             movieTittle.text = tittle
             yearTittle.text = year
             genreTxt.text = genre
@@ -36,11 +39,6 @@ class MovieActivity : AppCompatActivity() {
                 .into(imageView)
         }
 
-    }
-
-    override fun onSaveInstanceState(outState: Bundle?) {
-
-        super.onSaveInstanceState(outState)
     }
 
     override fun onResume() {
