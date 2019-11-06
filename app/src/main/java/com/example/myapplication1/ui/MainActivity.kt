@@ -49,31 +49,4 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentMovieList)
         }
     }
-//onsaveInstanceState
-
-
-    override fun onResume() {
-        Log.e("MainActivity", "onresume")
-        super.onResume()
-    }
-
-    override fun onStart() {
-        Log.e("MainActivity", "onStart")
-        super.onStart()
-    }
-
-    override fun onDestroy() {
-        Log.e("MainActivity", "onDestroy")
-        super.onDestroy()
-    }
-
-    override fun onStop() {
-        Log.e("MainActivity", "onStop")
-        super.onStop()
-    }
-
-    override fun onPause() {
-        Log.e("MainActivity", "onPause")
-        super.onPause()
-    }
 }
