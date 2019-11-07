@@ -13,8 +13,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.013"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/steve_jobs"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
             android:id="@+id/title"
