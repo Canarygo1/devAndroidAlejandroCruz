@@ -1,4 +1,4 @@
-package com.example.myapplication1.ui
+package com.example.myapplication1.ui.favorites
 
 
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication1.Data.local.MovieEntity
 import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
+import com.example.myapplication1.ui.MovieAdapter
 import kotlinx.android.synthetic.main.fragment_favorites.*
 
 class favoritesFragment : Fragment(), MovieFovoritesSearch {

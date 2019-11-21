@@ -1,4 +1,4 @@
-package com.example.myapplication1.ui
+package com.example.myapplication1.ui.details
 
 //themoviedb.org api
 //Crear modelos objectos del Json
@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication1.Data.RemoteRepository
 import com.example.myapplication1.Data.RemoteRepositoryRetrofit
 import com.example.myapplication1.Data.RetrofitFactory
-import com.example.myapplication1.Data.local.MovieEntity
 
 import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
@@ -34,7 +33,8 @@ class MovieActivity : AppCompatActivity(), MovieDetailView {
         val remoteRepository: RemoteRepository =
             RemoteRepositoryRetrofit(RetrofitFactory.getMovieApi())
         movie = intent.extras?.getSerializable("movie") as Movie
-        presenter = MovieDetailPresenter(this, remoteRepository)
+        presenter =
+            MovieDetailPresenter(this, remoteRepository)
         presenter.fetchMovieDetail(movie.id)
     }
 

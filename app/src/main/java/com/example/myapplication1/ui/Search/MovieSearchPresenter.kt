@@ -1,4 +1,4 @@
-package com.example.myapplication1.ui
+package com.example.myapplication1.ui.Search
 
 import com.example.myapplication1.Data.RemoteRepository
 import com.example.myapplication1.model.Movie

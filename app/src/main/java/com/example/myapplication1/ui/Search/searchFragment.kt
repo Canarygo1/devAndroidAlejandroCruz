@@ -1,4 +1,4 @@
-package com.example.myapplication1.ui
+package com.example.myapplication1.ui.Search
 
 
 import android.content.Intent
@@ -18,6 +18,8 @@ import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
 
 import com.example.myapplication1.model.MovieResult
+import com.example.myapplication1.ui.details.MovieActivity
+import com.example.myapplication1.ui.MovieAdapter
 import kotlinx.android.synthetic.main.fragment_search.*
 
 class searchFragment : Fragment(), MovieSearch {
@@ -49,7 +51,8 @@ class searchFragment : Fragment(), MovieSearch {
 
         val remoteRepository: RemoteRepository =
             RemoteRepositoryRetrofit(RetrofitFactory.getMovieApi())
-        presenter = MovieSearchPresenter(this, remoteRepository)
+        presenter =
+            MovieSearchPresenter(this, remoteRepository)
         button = view.findViewById(R.id.buttonFavorites)
         text = view.findViewById(R.id.editTextFavorites)
 

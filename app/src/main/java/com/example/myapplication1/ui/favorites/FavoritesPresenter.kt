@@ -1,4 +1,4 @@
-package com.example.myapplication1.ui
+package com.example.myapplication1.ui.favorites
 
 import com.example.myapplication1.Data.local.MovieDataBase
 import com.example.myapplication1.Data.local.MovieEntity
