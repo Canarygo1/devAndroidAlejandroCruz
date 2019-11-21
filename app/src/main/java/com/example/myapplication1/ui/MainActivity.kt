@@ -14,17 +14,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-    val navView:BottomNavigationView = findViewById(R.id.nav_view)
-    val navController = findNavController(R.id.myNavHostFragment)
-    val appBarConfiguration = AppBarConfiguration(
-        setOf(
-          R.id.searchFragment,R.id.favoritesFragment
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val navController = findNavController(R.id.myNavHostFragment)
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.searchFragment, R.id.favoritesFragment
+            )
         )
-      )
-      setupActionBarWithNavController(navController,appBarConfiguration)
-      navView.setupWithNavController(navController)
-  }
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+    }
 }

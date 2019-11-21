@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class MovieEntity(
     @PrimaryKey var title: String,
     @ColumnInfo(name = "originalTitle") var originalTitle: String,
-    @ColumnInfo(name ="rating") var rating: String,
-    @ColumnInfo(name ="releaseDate") var releaseDate: String,
-    @ColumnInfo(name ="poster") var poster: String
+    @ColumnInfo(name = "rating") var rating: String,
+    @ColumnInfo(name = "releaseDate") var releaseDate: String,
+    @ColumnInfo(name = "poster") var poster: String
 )

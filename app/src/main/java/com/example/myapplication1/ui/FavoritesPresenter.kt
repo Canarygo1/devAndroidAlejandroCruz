@@ -8,18 +8,24 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FavoritesPresenter(val view:favoritesFragment) {
+class FavoritesPresenter(val view: favoritesFragment) {
     val db = MovieDataBase(view.context!!)
 
-        fun searchClicked(searchTerm:String){
-            if (searchTerm.isEmpty()) return
-            CoroutineScope(Dispatchers.IO).launch {
-                var data =db.MovieDao().findByTitle(searchTerm)
-                withContext(Dispatchers.Main) {
+    fun searchClicked(searchTerm: String) {
+        if (searchTerm.isEmpty()) return
+        CoroutineScope(Dispatchers.IO).launch {
+            var data: MovieEntity? = db.MovieDao().findByTitle(searchTerm)
+            withContext(Dispatchers.Main) {
+                print(data)
+                if (data != null) {
                     view.showMovies(listOf(data))
+                } else {
+                    view.showMoviesNull()
                 }
             }
         }
+    }
+
     fun loadAllMovies() {
         CoroutineScope(Dispatchers.IO).launch {
             var data = db.MovieDao().getAll()
@@ -28,7 +34,8 @@ class FavoritesPresenter(val view:favoritesFragment) {
             }
         }
     }
-    fun deleteAll(){
+
+    fun deleteAll() {
         CoroutineScope(Dispatchers.IO).launch {
             db.MovieDao().deleteAll()
             withContext(Dispatchers.Main) {
@@ -42,6 +49,7 @@ class FavoritesPresenter(val view:favoritesFragment) {
         print("Proxima implementacion...En construccion")
     }
 }
-interface MovieFovoritesSearch{
-    fun showMovies(allFavoritesmovies:List<MovieEntity>)
+
+interface MovieFovoritesSearch {
+    fun showMovies(allFavoritesmovies: List<MovieEntity>)
 }

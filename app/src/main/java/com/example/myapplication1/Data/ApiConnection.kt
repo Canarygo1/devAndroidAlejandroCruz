@@ -11,10 +11,12 @@ import retrofit2.http.*
 
 interface ApiConnection {
     @GET("search/movie?")
-    suspend fun getMovie(@Query("api_key") apikeys:String,@Query("query") movie: String): Response<MovieResult>
+    suspend fun getMovie(@Query("api_key") apikeys: String, @Query("query") movie: String): Response<MovieResult>
+
     @GET("movie/{id}")
-    suspend fun getDetailMovie(@Path("id") apiId:String,@Query("api_key") apikeys:String):Response <MovieDetail>
+    suspend fun getDetailMovie(@Path("id") apiId: String, @Query("api_key") apikeys: String): Response<MovieDetail>
 }
+
 object RetrofitFactory {
     const val BASE_URL = "https://api.themoviedb.org/3/"
     fun getMovieApi(): ApiConnection {

@@ -1,4 +1,5 @@
 package com.example.myapplication1.ui
+
 import com.example.myapplication1.Data.RemoteRepository
 import com.example.myapplication1.model.Movie
 import com.example.myapplication1.model.MovieResult
@@ -8,7 +9,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-class MovieSearchPresenter(val view: searchFragment,val remoteRespository:RemoteRepository) {
+class MovieSearchPresenter(val view: searchFragment, val remoteRespository: RemoteRepository) {
 
     fun searchClicked(searchTerm: String) {
         if (searchTerm.isEmpty()) return
@@ -18,17 +19,19 @@ class MovieSearchPresenter(val view: searchFragment,val remoteRespository:Remote
                 withContext(Dispatchers.Main) {
                     view.showMovie(response)
                 }
-            }catch (e:Exception){
-                withContext(Dispatchers.Main){
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
                     println(e)
+                }
             }
         }
     }
-    }
-    fun MovieClicked(movie:Movie) {
+
+    fun MovieClicked(movie: Movie) {
         view.openMovieDetail(movie)
     }
 }
+
 interface MovieSearch {
     fun showMovie(movies: MovieResult)
     fun openMovieDetail(id: Movie)

@@ -20,9 +20,9 @@ import com.example.myapplication1.model.Movie
 import com.example.myapplication1.model.MovieResult
 import kotlinx.android.synthetic.main.fragment_search.*
 
-class searchFragment : Fragment() ,MovieSearch{
-    lateinit var button:Button
-    lateinit var text:EditText
+class searchFragment : Fragment(), MovieSearch {
+    lateinit var button: Button
+    lateinit var text: EditText
     lateinit var presenter: MovieSearchPresenter
     lateinit var movieAdapter: MovieAdapter
 
@@ -34,7 +34,7 @@ class searchFragment : Fragment() ,MovieSearch{
         val intent = Intent(this.context, MovieActivity::class.java)
         intent.putExtra("movie", movie)
         startActivity(intent)
-   }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,8 +47,9 @@ class searchFragment : Fragment() ,MovieSearch{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val remoteRepository: RemoteRepository = RemoteRepositoryRetrofit(RetrofitFactory.getMovieApi())
-        presenter = MovieSearchPresenter(this,remoteRepository)
+        val remoteRepository: RemoteRepository =
+            RemoteRepositoryRetrofit(RetrofitFactory.getMovieApi())
+        presenter = MovieSearchPresenter(this, remoteRepository)
         button = view.findViewById(R.id.buttonFavorites)
         text = view.findViewById(R.id.editTextFavorites)
 
@@ -59,7 +60,7 @@ class searchFragment : Fragment() ,MovieSearch{
             }
             adapter = movieAdapter
         }
-        button.setOnClickListener{
+        button.setOnClickListener {
             presenter.searchClicked(text.text.toString())
         }
     }

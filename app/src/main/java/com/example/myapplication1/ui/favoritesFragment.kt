@@ -12,29 +12,41 @@ import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
 import kotlinx.android.synthetic.main.fragment_favorites.*
 
-class favoritesFragment : Fragment(),MovieFovoritesSearch {
+class favoritesFragment : Fragment(), MovieFovoritesSearch {
     lateinit var movieAdapter: MovieAdapter
     lateinit var presenter: FavoritesPresenter
 
     override fun showMovies(allFavoritesmovies: List<MovieEntity>) {
         var movieList: MutableList<Movie> = mutableListOf()
         println(allFavoritesmovies.get(0).originalTitle)
-        if (allFavoritesmovies.get(0) == null){
-            Toast.makeText(this.context, "Dato no encontrado pruebe con otros", Toast.LENGTH_SHORT).show()
-            presenter.loadAllMovies()
-        }
+
+
+
         allFavoritesmovies.forEach {
-            var movie = Movie(0,it.poster,it.title,it.originalTitle,it.releaseDate,it.rating.toDouble())
+            var movie = Movie(
+                0,
+                it.poster,
+                it.title,
+                it.originalTitle,
+                it.releaseDate,
+                it.rating.toDouble()
+            )
             movieList.add(movie)
             movieAdapter.addMovies(movieList)
         }
+    }
+
+    fun showMoviesNull() {
+        Toast.makeText(this.context, "Dato no encontrado pruebe con otros", Toast.LENGTH_SHORT)
+            .show()
+        presenter.loadAllMovies()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_favorites, container, false)
     }
 
@@ -47,14 +59,14 @@ class favoritesFragment : Fragment(),MovieFovoritesSearch {
             adapter = movieAdapter
         }
         presenter.loadAllMovies()
-        buttonFavorites.setOnClickListener{
+        buttonFavorites.setOnClickListener {
             presenter.searchClicked(editTextFavorites.text.toString())
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.deleteAll-> {
+            R.id.deleteAll -> {
                 presenter.deleteAll()
                 true
             }
@@ -63,7 +75,7 @@ class favoritesFragment : Fragment(),MovieFovoritesSearch {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.favoritesmenu, menu);
+        inflater.inflate(R.menu.favoritesmenu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 }
