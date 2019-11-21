@@ -1,21 +1,22 @@
 package com.example.myapplication1.ui
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
 import com.squareup.picasso.Picasso
+
 
 
 class MovieAdapter(private val listener: (Movie) -> Unit) : RecyclerView.Adapter<ViewHolder>() {
 
     private var movieList = listOf<Movie>()
 
-    fun addCities(newMovie: List<Movie>) {
+    fun addMovies(newMovie: List<Movie>) {
         this.movieList = newMovie
         notifyDataSetChanged()
     }
@@ -27,7 +28,6 @@ class MovieAdapter(private val listener: (Movie) -> Unit) : RecyclerView.Adapter
     }
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         p0.bind(movieList[p1], listener)
-
     }
 }
 class ViewHolder private constructor(view: View) : RecyclerView.ViewHolder(view) {
@@ -36,7 +36,7 @@ class ViewHolder private constructor(view: View) : RecyclerView.ViewHolder(view)
     private val releaseDate = view.findViewById<TextView>(R.id.releaseDateTxt)
     private val rating = view.findViewById<TextView>(R.id.rating)
     private val poster = view.findViewById<ImageView>(R.id.poster)
-//
+
 
     fun bind(movie: Movie, listener: (Movie) -> Unit) {
         title.text = movie.title
@@ -48,7 +48,6 @@ class ViewHolder private constructor(view: View) : RecyclerView.ViewHolder(view)
             into(poster)
         this.itemView.setOnClickListener { listener.invoke(movie) }
     }
-
     companion object {
         fun from(parent: ViewGroup): ViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_row, parent, false)
@@ -56,5 +55,3 @@ class ViewHolder private constructor(view: View) : RecyclerView.ViewHolder(view)
         }
     }
 }
-
-

@@ -1,52 +1,30 @@
 package com.example.myapplication1.ui
 
-import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.TextView
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication1.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private var counter = 0
-    private val name: String = "Alejandro Cruz"
-    private val city: String = "S/C de Tenerife"
-    private val description: String =
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    private val birthday: String = "02/06/1999"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val counterButton: Button = findViewById(R.id.myCounterButton)
-        val button: Button = findViewById(R.id.myButton)
-        val textCounter: TextView = findViewById(R.id.text)
-        counterButton.setOnClickListener {
-            counter++
-            textCounter.text = counter.toString()
-        }
-        button.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java).apply {
-                putExtra("name", name)
-                putExtra("city", city)
-                putExtra("description", description)
-                putExtra("birthday", birthday)
-            }
-            startActivity(intent)
-        }
-        val buttonMovie: Button = findViewById(R.id.myButton2)
-        buttonMovie.setOnClickListener {
-            val intentMovie = Intent(this, MovieActivity::class.java).apply {
-
-            }
-            startActivity(intentMovie)
-        }
-        val buttonMovieList: Button = findViewById(R.id.myButton3)
-        buttonMovieList.setOnClickListener {
-            val intentMovieList = Intent(this, ActivityMovieList::class.java).apply {
-            }
-            startActivity(intentMovieList)
-        }
-    }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    val navView:BottomNavigationView = findViewById(R.id.nav_view)
+    val navController = findNavController(R.id.myNavHostFragment)
+    val appBarConfiguration = AppBarConfiguration(
+        setOf(
+          R.id.searchFragment,R.id.favoritesFragment
+        )
+      )
+      setupActionBarWithNavController(navController,appBarConfiguration)
+      navView.setupWithNavController(navController)
+  }
 }

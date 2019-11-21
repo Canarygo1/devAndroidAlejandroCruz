@@ -1,5 +1,6 @@
 package com.example.myapplication1.model
 
+import java.io.Serializable
 
 
 data class Movie(
@@ -8,14 +9,8 @@ data class Movie(
     val title: String,
     val original_title:String,
     val release_date: String,
-    val vote_average: Double,
-    val backdrop_path:String,
-    val overview:String,
-    val name:String,
-    val genres:List<String>,
-    val quetal:String,
-    val genre_ids:List<Int>
-)
+    val vote_average: Double
+):Serializable
 data class MovieResult(
     var page: Int,
     var total_page:Int,
