@@ -21,6 +21,7 @@ class FavoritesPresenter(val view: favoritesFragment) {
                     view.showMovies(listOf(data))
                 } else {
                     view.showMoviesNull()
+
                 }
             }
         }
