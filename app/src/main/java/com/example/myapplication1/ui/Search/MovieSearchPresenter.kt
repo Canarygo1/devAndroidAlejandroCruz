@@ -1,6 +1,6 @@
 package com.example.myapplication1.ui.Search
 
-import com.example.myapplication1.Data.RemoteRepository
+import com.example.myapplication1.Data.remote.MovieApi.RemoteRepository
 import com.example.myapplication1.model.Movie
 import com.example.myapplication1.model.MovieResult
 import kotlinx.coroutines.CoroutineScope

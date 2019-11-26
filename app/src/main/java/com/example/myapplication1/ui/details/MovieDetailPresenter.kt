@@ -1,11 +1,10 @@
 package com.example.myapplication1.ui.details
 
-import com.example.myapplication1.Data.RemoteRepository
+import com.example.myapplication1.Data.remote.MovieApi.RemoteRepository
 import com.example.myapplication1.Data.local.MovieDataBase
 import com.example.myapplication1.Data.local.MovieEntity
 import com.example.myapplication1.model.Movie
 import com.example.myapplication1.model.MovieDetail
-import com.example.myapplication1.ui.details.MovieActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
