@@ -43,6 +43,7 @@ class MovieActivity : AppCompatActivity(), MovieDetailView {
         val yearTittle = yearTxt
         val descriptionTxt = descriptionTxt
         val backdrop = backdrop
+        val
         favIconButton = favIcon
         title.text = detail.original_title
         yearTittle.text = detail.release_date

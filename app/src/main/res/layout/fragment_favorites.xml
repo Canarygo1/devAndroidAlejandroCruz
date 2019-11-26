@@ -4,6 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/gray"
+
         android:id="@+id/frameLayoutFavorites">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -25,6 +27,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="94dp"
             android:ems="10"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:inputType="textPersonName"
             android:text="Name"
             app:layout_constraintEnd_toStartOf="@+id/buttonFavorites"
