@@ -11,9 +11,9 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 
-import com.example.myapplication1.Data.RemoteRepository
-import com.example.myapplication1.Data.RemoteRepositoryRetrofit
-import com.example.myapplication1.Data.RetrofitFactory
+import com.example.myapplication1.Data.remote.MovieApi.RemoteRepository
+import com.example.myapplication1.Data.remote.MovieApi.RemoteRepositoryRetrofit
+import com.example.myapplication1.Data.remote.MovieApi.RetrofitFactory
 import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
 
@@ -43,7 +43,9 @@ class searchFragment : Fragment(), MovieSearch {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
+        var data = inflater.inflate(R.layout.fragment_search, container, false)
+
+        return data
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

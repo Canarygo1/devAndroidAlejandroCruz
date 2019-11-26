@@ -21,6 +21,7 @@ class FavoritesPresenter(val view: favoritesFragment) {
                     view.showMovies(listOf(data))
                 } else {
                     view.showMoviesNull()
+
                 }
             }
         }
@@ -40,6 +41,7 @@ class FavoritesPresenter(val view: favoritesFragment) {
             db.MovieDao().deleteAll()
             withContext(Dispatchers.Main) {
                 var data = listOf<MovieEntity>()
+
                 view.showMovies(data)
             }
         }
