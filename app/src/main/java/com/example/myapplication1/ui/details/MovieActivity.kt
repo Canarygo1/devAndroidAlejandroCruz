@@ -10,9 +10,9 @@ package com.example.myapplication1.ui.details
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication1.Data.RemoteRepository
-import com.example.myapplication1.Data.RemoteRepositoryRetrofit
-import com.example.myapplication1.Data.RetrofitFactory
+import com.example.myapplication1.Data.remote.MovieApi.RemoteRepository
+import com.example.myapplication1.Data.remote.MovieApi.RemoteRepositoryRetrofit
+import com.example.myapplication1.Data.remote.MovieApi.RetrofitFactory
 
 import com.example.myapplication1.R
 import com.example.myapplication1.model.Movie
@@ -44,7 +44,7 @@ class MovieActivity : AppCompatActivity(), MovieDetailView {
         val descriptionTxt = descriptionTxt
         val backdrop = backdrop
         val
-        favIconButton = favIcon
+                favIconButton = favIcon
         title.text = detail.original_title
         yearTittle.text = detail.release_date
         descriptionTxt.text = detail.overview

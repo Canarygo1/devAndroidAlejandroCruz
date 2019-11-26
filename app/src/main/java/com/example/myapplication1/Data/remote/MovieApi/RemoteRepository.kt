@@ -1,4 +1,4 @@
-package com.example.myapplication1.Data
+package com.example.myapplication1.Data.remote.MovieApi
 
 import com.example.myapplication1.model.MovieDetail
 import com.example.myapplication1.model.MovieResult

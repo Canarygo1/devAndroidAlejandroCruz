@@ -1,14 +1,15 @@
-package com.example.myapplication1
+package com.example.myapplication1.ui.Login
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication1.Data.RemoteRepositoryRetrofitLogin
-import com.example.myapplication1.Data.RetrofitLoginFactory
+import com.example.myapplication1.Data.remote.LoginApi.RemoteRepositoryRetrofitLogin
+import com.example.myapplication1.Data.remote.LoginApi.RetrofitLoginFactory
+import com.example.myapplication1.R
+import com.example.myapplication1.ui.Register.RegisterActivity
 import com.example.myapplication1.ui.MainActivity
 
 class LoginActivity : AppCompatActivity(), LoginView {
@@ -17,6 +18,8 @@ class LoginActivity : AppCompatActivity(), LoginView {
     private lateinit var passwordTxt: EditText
     private lateinit var loginBtn: Button
     private lateinit var clearBtn: Button
+    private lateinit var registerBtn: Button
+    private lateinit var skipBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,16 +29,11 @@ class LoginActivity : AppCompatActivity(), LoginView {
         passwordTxt = findViewById(R.id.passwordTxt)
         loginBtn = findViewById(R.id.loginBtn)
         clearBtn = findViewById(R.id.clearBtn)
-
-//        val localRepository =
-//            PreferenceLocalRepository(
-//                getSharedPreferences(
-//                    "login_preference",
-//                    Context.MODE_PRIVATE
-//                )
-//            )
-        val remoteRepository = RemoteRepositoryRetrofitLogin(RetrofitLoginFactory.getLoginApi())
-        val presenter = LoginPresenter(this,remoteRepository)
+        registerBtn = findViewById(R.id.RegisterButton)
+        skipBtn = findViewById(R.id.SkipButton)
+        val remoteRepository =
+            RemoteRepositoryRetrofitLogin(RetrofitLoginFactory.getLoginApi())
+        val presenter = LoginPresenter(this, remoteRepository)
 
         loginBtn.setOnClickListener {
 
@@ -43,9 +41,14 @@ class LoginActivity : AppCompatActivity(), LoginView {
             val password = passwordTxt.text.toString()
             presenter.onLoginClicked(username, password)
         }
-
+        registerBtn.setOnClickListener {
+            goToRegister()
+        }
         clearBtn.setOnClickListener {
             presenter.onClearClicked()
+        }
+        skipBtn.setOnClickListener {
+            goToSearch()
         }
         presenter.init()
     }
@@ -75,6 +78,11 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun goToSearch() {
         startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
+    override fun goToRegister() {
+        startActivity(Intent(this, RegisterActivity::class.java))
         finish()
     }
 }

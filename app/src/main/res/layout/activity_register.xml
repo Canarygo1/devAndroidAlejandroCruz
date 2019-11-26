@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.Login.LoginActivity">
+        tools:context=".ui.Register.RegisterActivity">
 
     <EditText
             android:id="@+id/usernameTxt"
@@ -31,42 +31,25 @@
             app:layout_constraintTop_toBottomOf="@+id/usernameTxt" />
 
     <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/registerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="60dp"
             android:text="Login"
-            app:layout_constraintEnd_toEndOf="@+id/passwordTxt"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTxt" />
+            app:layout_constraintEnd_toEndOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
 
-    <Button
-            android:id="@+id/clearBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Clear"
-            app:layout_constraintStart_toStartOf="@+id/passwordTxt"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTxt" />
-
-    <Button
-            android:id="@+id/RegisterButton"
+    <EditText
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Register"
+            android:ems="10"
+            android:hint="E-mail"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/clearBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordTxt" />
 
-    <Button
-            android:id="@+id/SkipButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginBottom="48dp"
-            android:text="Skip"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.908"
-            app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

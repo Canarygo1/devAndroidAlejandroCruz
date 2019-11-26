@@ -1,7 +1,6 @@
-package com.example.myapplication1
+package com.example.myapplication1.ui.Login
 
-import com.example.myapplication1.Data.RemoteRepository
-import com.example.myapplication1.Data.RemoteRepositoryLogin
+import com.example.myapplication1.Data.remote.LoginApi.RemoteRepositoryLogin
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,12 +12,7 @@ class LoginPresenter(
 ) {
 
     fun init() {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val loggedUser = localRepository.getLoggedUser()
-//            if (loggedUser != null) {
-//                view.goToSearch()
-//            }
-//        }
+
     }
 
     fun onLoginClicked(username: String, password: String) {
@@ -36,7 +30,7 @@ class LoginPresenter(
 
         CoroutineScope(Dispatchers.IO).launch {
             val loggedUser = remoteRepositoryLogin.get(username, password)
-            if (loggedUser.token!= "error") {
+            if (loggedUser.token != "error") {
                 withContext(Dispatchers.Main) {
                     view.showLoginSuccessful()
                 }
@@ -60,4 +54,5 @@ interface LoginView {
     fun showFieldRequiredError(emptyList: List<String>)
     fun clearFields()
     fun goToSearch()
+    fun goToRegister()
 }
