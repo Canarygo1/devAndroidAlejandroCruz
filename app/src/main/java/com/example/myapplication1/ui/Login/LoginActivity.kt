@@ -61,6 +61,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     override fun showLoginError() {
         Toast.makeText(this, "Login error", Toast.LENGTH_SHORT).show()
         clearFields()
+
     }
 
     override fun showFieldRequiredError(emptyList: List<String>) {
