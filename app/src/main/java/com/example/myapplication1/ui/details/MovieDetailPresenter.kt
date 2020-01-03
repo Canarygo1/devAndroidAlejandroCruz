@@ -1,8 +1,8 @@
 package com.example.myapplication1.ui.details
 
-import com.example.myapplication1.Data.remote.MovieApi.RemoteRepository
 import com.example.myapplication1.Data.local.MovieDataBase
 import com.example.myapplication1.Data.local.MovieEntity
+import com.example.myapplication1.Data.remote.MovieApi.RemoteRepository
 import com.example.myapplication1.model.Movie
 import com.example.myapplication1.model.MovieDetail
 import kotlinx.coroutines.CoroutineScope

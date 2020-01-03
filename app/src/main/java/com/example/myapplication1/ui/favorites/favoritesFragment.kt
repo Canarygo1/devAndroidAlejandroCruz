@@ -19,7 +19,6 @@ class favoritesFragment : Fragment(), MovieFovoritesSearch {
 
     override fun showMovies(allFavoritesmovies: List<MovieEntity>) {
         var movieList: MutableList<Movie> = mutableListOf()
-        println(allFavoritesmovies.get(0).originalTitle)
 
 
 
