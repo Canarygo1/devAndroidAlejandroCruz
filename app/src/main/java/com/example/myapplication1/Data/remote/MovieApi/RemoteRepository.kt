@@ -7,4 +7,6 @@ interface RemoteRepository {
     suspend fun searchMovie(term: String): MovieResult
     suspend fun movieDetails(term: String): MovieDetail
 
+
+
 }
